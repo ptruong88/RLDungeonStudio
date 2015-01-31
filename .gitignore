@@ -41,20 +41,3 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
-
-# Files made by Android Stud
-*.lock
-*.properties
-*.bin
-*.name
-.idea
-.gradle
-app/build
-build
-gradle
-gradlew
-*.gradle
-*.bat
-import-summary.txt
-*.iml
-app/lint.xml
