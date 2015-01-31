@@ -21,7 +21,7 @@ public class ImageObject {
 	private int frameCountX;
 	private int frameCountY;
 	// The width and height of layout
-	private static int width, height;
+	private int width, height;
 	// The source box for bitmap and destination box for draw bitmap on screen.
 	private Rect srcBox;
 	private RectF dstBox;

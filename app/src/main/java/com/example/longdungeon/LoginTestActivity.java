@@ -28,8 +28,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -42,9 +40,6 @@ public class LoginTestActivity extends ActionBarActivity implements
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		// //Remove title bar
-		
-		
 		setContentView(R.layout.activity_login_test);
 
 		this.findViewById(R.id.layoutLoginText).setVisibility(View.INVISIBLE);
@@ -61,11 +56,13 @@ public class LoginTestActivity extends ActionBarActivity implements
 		((Button) this.findViewById(R.id.buttonData2)).setOnClickListener(this);
 		((Button) this.findViewById(R.id.buttonPlay)).setOnClickListener(this);
 		((Button) this.findViewById(R.id.buttonNew)).setOnClickListener(this);
-
+		
 		((Button) this.findViewById(R.id.buttonPlay)).setEnabled(false);
 		((Button) this.findViewById(R.id.buttonNew)).setEnabled(false);
 		setUpNewDialog();
 	}
+
+	
 
 	@Override
 	public void onClick(View v) {
@@ -98,8 +95,8 @@ public class LoginTestActivity extends ActionBarActivity implements
 		case R.id.buttonPlay:
 			Intent intentBattle = new Intent(LoginTestActivity.this,
 					BattleTestActivity.class);
-			// Intent intentBattle = new Intent(LoginTestActivity.this,
-			// BattleTestAnimation.class);
+//			Intent intentBattle = new Intent(LoginTestActivity.this,
+//					BattleTestAnimation.class);
 			intentBattle.putExtra(Player.PLAYER_DATA, buttonPress1 ? player1
 					: player2);
 			startActivity(intentBattle);
@@ -110,6 +107,8 @@ public class LoginTestActivity extends ActionBarActivity implements
 			break;
 		}
 	}
+
+	
 
 	private void setUpNewDialog() {
 		alertDialog = new AlertDialog.Builder(this);
@@ -170,7 +169,7 @@ public class LoginTestActivity extends ActionBarActivity implements
 	private void newPlayer(final String playerFile) {
 		this.findViewById(R.id.layoutLoginText).setVisibility(View.VISIBLE);
 		this.findViewById(R.id.layoutLoginChoose).setVisibility(View.INVISIBLE);
-
+		
 		final EditText edTxtLogin = (EditText) this
 				.findViewById(R.id.editTextLogin);
 		final Button btnLogin = (Button) this.findViewById(R.id.buttonLogin);
@@ -210,8 +209,8 @@ public class LoginTestActivity extends ActionBarActivity implements
 				player.setNameFile(playerFile);
 				Intent intentBattle = new Intent(LoginTestActivity.this,
 						BattleTestActivity.class);
-				// Intent intentBattle = new Intent(LoginTestActivity.this,
-				// BattleTestAnimation.class);
+//				Intent intentBattle = new Intent(LoginTestActivity.this,
+//						BattleTestAnimation.class);
 				intentBattle.putExtra(Player.PLAYER_DATA, player);
 				startActivity(intentBattle);
 				finish();
