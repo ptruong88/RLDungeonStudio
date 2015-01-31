@@ -1,0 +1,734 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context="com.example.longdungeon.InventoryActivity" >
+
+    <ImageView
+        android:id="@+id/imageLogo"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/banner" />
+
+    <ImageView
+        android:id="@+id/imagePlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/layoutPlayerInfo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/imageLogo"
+        android:layout_below="@+id/imageLogo"
+        android:background="@drawable/colorbox"
+        android:scaleType="fitCenter"
+        android:src="@drawable/knight" />
+
+    <RelativeLayout
+        android:id="@+id/layoutPlayerInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/imagePlayer"
+        android:background="@drawable/colorbox" >
+
+        <TextView
+            android:id="@+id/textViewPlayerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="XXXXX"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size" />
+
+        <TextView
+            android:id="@+id/textViewPlayerHpName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textViewPlayerName"
+            android:layout_marginLeft="5dp"
+            android:text="HP"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size" />
+
+        <TextView
+            android:id="@+id/textViewPlayerHp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewPlayerHpName"
+            android:layout_alignLeft="@+id/textViewPlayerDefend"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/textViewPlayerHpName"
+            android:layout_toRightOf="@+id/textViewPlayerHpName"
+            android:text="100/100"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size" />
+
+        <TextView
+            android:id="@+id/textViewPlayerStmName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textViewPlayerHpName"
+            android:layout_marginLeft="5dp"
+            android:text="STM"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size" />
+
+        <TextView
+            android:id="@+id/textViewPlayerStm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewPlayerStmName"
+            android:layout_alignLeft="@+id/textViewPlayerDefend"
+            android:layout_alignTop="@+id/textViewPlayerStmName"
+            android:layout_toRightOf="@+id/textViewPlayerStmName"
+            android:text="100/100"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size" />
+
+        <TextView
+            android:id="@+id/textViewPlayerManaName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textViewPlayerStmName"
+            android:layout_marginLeft="5dp"
+            android:text="MANA"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size" />
+
+        <TextView
+            android:id="@+id/textViewPlayerMana"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewPlayerManaName"
+            android:layout_alignLeft="@+id/textViewPlayerDefend"
+            android:layout_alignTop="@+id/textViewPlayerManaName"
+            android:layout_toRightOf="@+id/textViewPlayerManaName"
+            android:text="100/100"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size" />
+
+        <TextView
+            android:id="@+id/textViewPlayerDamageName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textViewPlayerManaName"
+            android:layout_marginLeft="5dp"
+            android:text="DMG"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size" />
+
+        <TextView
+            android:id="@+id/textViewPlayerDamage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewPlayerDamageName"
+            android:layout_alignLeft="@+id/textViewPlayerDefend"
+            android:layout_alignTop="@+id/textViewPlayerDamageName"
+            android:layout_toRightOf="@+id/textViewPlayerDamageName"
+            android:text="100"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size" />
+
+        <TextView
+            android:id="@+id/textViewPlayerDefendName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textViewPlayerDamageName"
+            android:layout_marginLeft="5dp"
+            android:text="DEFEND"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size" />
+
+        <TextView
+            android:id="@+id/textViewPlayerDefend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textViewPlayerDefendName"
+            android:layout_alignTop="@+id/textViewPlayerDefendName"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/textViewPlayerDefendName"
+            android:text="100"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutGold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageLogo"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/imageLogo"
+        android:background="@drawable/colorbox" >
+
+        <TextView
+            android:id="@+id/textViewScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:text="Score: 1000"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size" />
+
+        <TextView
+            android:id="@+id/textViewGold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:layout_toRightOf="@+id/textViewScore"
+            android:text="Gold: 1000"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size" />
+
+        <Button
+            android:id="@+id/buttonShop"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:layout_toRightOf="@+id/textViewGold"
+            android:text="Shop" />
+
+        <Button
+            android:id="@+id/buttonBattle"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:layout_toRightOf="@+id/buttonShop"
+            android:text="Battle" />
+
+        <Button
+            android:id="@+id/buttonSkill"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:layout_toRightOf="@+id/buttonBattle"
+            android:text="Skill" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollViewCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/layoutGold"
+        android:layout_toRightOf="@+id/imagePlayer"
+        android:background="@drawable/colorbox"
+        android:visibility="invisible" >
+
+        <LinearLayout
+            android:id="@+id/layoutCategory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/buttonAll"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.1"
+                android:text="All"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/buttonWeapon"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="0dp"
+                android:layout_weight="0.1"
+                android:padding="0dp"
+                android:text="Weapon"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/buttonHelmet"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.1"
+                android:text="Helmet"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/buttonShield"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.1"
+                android:text="Shield"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/buttonCloth"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.1"
+                android:text="Cloth"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/buttonRing"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.1"
+                android:text="Ring"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/buttonPotion"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.1"
+                android:text="Potion"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/layoutSkill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/layoutGold"
+        android:layout_toRightOf="@+id/imagePlayer"
+        android:background="@drawable/colorbox"
+        android:visibility="visible" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="6"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:id="@+id/textViewSkillNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="left"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:text="Skill Points: 5"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size" />
+
+            <RelativeLayout
+                android:id="@+id/layoutHp"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/textViewSkillHp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/buttonSkillHpLeftAll"
+                    android:text="HP"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_size" />
+
+                <Button
+                    android:id="@+id/buttonSkillHpLeftAll"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="45dp"
+                    android:layout_toRightOf="@+id/textViewSkillHp"
+                    android:onClick="onClickminusminusHP"
+                    android:text="- -"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/buttonSkillHpLeft"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/buttonSkillHpLeftAll"
+                    android:onClick="onClickminusHP"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewSkillHpInput"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/buttonSkillHpLeftAll"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/buttonSkillHpLeft"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_size" />
+
+                <Button
+                    android:id="@+id/buttonSkillHpRight"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/textViewSkillHpInput"
+                    android:onClick="onClickplusHP"
+                    android:text="+"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/buttonSkillHpRightAll"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/buttonSkillHpRight"
+                    android:onClick="onClickplusplusHP"
+                    android:text="+ +"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layoutStamina"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/textViewSkillStamina"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/buttonSkillStaminaLeftAll"
+                    android:text="STM"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_size" />
+
+                <Button
+                    android:id="@+id/buttonSkillStaminaLeftAll"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_toRightOf="@+id/textViewSkillStamina"
+                    android:onClick="onClickminusminusSTM"
+                    android:text="- -"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/buttonSkillStaminaLeft"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/buttonSkillStaminaLeftAll"
+                    android:onClick="onClickminusSTM"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewSkillStaminaInput"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/buttonSkillStaminaLeftAll"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/buttonSkillStaminaLeft"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_size" />
+
+                <Button
+                    android:id="@+id/buttonSkillStaminaRight"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/textViewSkillStaminaInput"
+                    android:onClick="onClickplusSTM"
+                    android:text="+"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/buttonSkillStaminaRightAll"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/buttonSkillStaminaRight"
+                    android:onClick="onClickplusplusSTM"
+                    android:text="+ +"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layoutMana"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/textViewSkillMana"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/buttonSkillManaLeftAll"
+                    android:text="MANA"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_size" />
+
+                <Button
+                    android:id="@+id/buttonSkillManaLeftAll"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="23dp"
+                    android:layout_toRightOf="@+id/textViewSkillMana"
+                    android:onClick="onClickminusminusMANA"
+                    android:text="- -"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/buttonSkillManaLeft"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/buttonSkillManaLeftAll"
+                    android:onClick="onClickminusMANA"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewSkillManaInput"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/buttonSkillManaLeftAll"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/buttonSkillManaLeft"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_size" />
+
+                <Button
+                    android:id="@+id/buttonSkillManaRight"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/textViewSkillManaInput"
+                    android:onClick="onClickplusMANA"
+                    android:text="+"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/buttonSkillManaRightAll"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/buttonSkillManaRight"
+                    android:onClick="onClickplusplusMANA"
+                    android:text="+ +"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layoutDMG"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/textViewSkillDMG"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/buttonSkillDMGLeftAll"
+                    android:text="DMG"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_size" />
+
+                <Button
+                    android:id="@+id/buttonSkillDMGLeftAll"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="33dp"
+                    android:layout_toRightOf="@+id/textViewSkillDMG"
+                    android:onClick="onClickminusminusDMG"
+                    android:text="- -"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/buttonSkillDMGLeft"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/buttonSkillDMGLeftAll"
+                    android:onClick="onClickminusDMG"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewSkillDMGInput"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/buttonSkillDMGLeftAll"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/buttonSkillDMGLeft"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_size" />
+
+                <Button
+                    android:id="@+id/buttonSkillDMGRight"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/textViewSkillDMGInput"
+                    android:onClick="onClickplusDMG"
+                    android:text="+"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/buttonSkillDMGRightAll"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/buttonSkillDMGRight"
+                    android:onClick="onClickplusplusDMG"
+                    android:text="+ +"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layoutDEFEND"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/textViewSkillDEFEND"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/buttonSkillDEFENDLeftAll"
+                    android:text="DEFEND"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_size" />
+
+                <Button
+                    android:id="@+id/buttonSkillDEFENDLeftAll"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/textViewSkillDEFEND"
+                    android:onClick="onClickminusminusDFND"
+                    android:text="- -"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/buttonSkillDEFENDLeft"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/buttonSkillDEFENDLeftAll"
+                    android:onClick="onClickminusDFND"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewSkillDEFENDInput"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/buttonSkillDEFENDLeftAll"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/buttonSkillDEFENDLeft"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_size" />
+
+                <Button
+                    android:id="@+id/buttonSkillDEFENDRight"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/textViewSkillDEFENDInput"
+                    android:onClick="onClickplusDFND"
+                    android:text="+"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/buttonSkillDEFENDRightAll"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/buttonSkillDEFENDRight"
+                    android:onClick="onClickplusplusDFND"
+                    android:text="+ +"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <ListView
+        android:id="@+id/listViewItems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/scrollViewCategory"
+        android:layout_toRightOf="@+id/scrollViewCategory"
+        android:background="@drawable/colorbox"
+        android:visibility="invisible" >
+    </ListView>
+
+</RelativeLayout>
