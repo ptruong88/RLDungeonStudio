@@ -73,12 +73,12 @@ public class ImageBattle extends View {
 		playerChoice = STAND;
 
 		mob = new ImageObject(BitmapFactory.decodeResource(getResources(),
-				R.drawable.goblin_750), 4, 5);
+				R.drawable.spider_sprite), 5, 3);
 		mob.setScale(1.0);
 		mob.setFrameStand(0, 3, 0, 0);
 		mob.setFrameMove(0, 3, 0, 0);
-		mob.setFrameAttack(0, 3, 1, 2);
-		mob.setFrameDefend(0, 3, 3, 4);
+		mob.setFrameAttack(0, 4, 1, 1);
+		mob.setFrameDefend(0, 2, 2, 2);
 		mob.setStand();
 		mobChoice = STAND;
 	}
